@@ -33,13 +33,16 @@ import java.nio.file.Paths;
 @RequestMapping("/test")
 public class TestController {
     
-    @PostMapping(path = "/input")
-    public Object insertList(MultipartFile excel, @RequestParam("name") String name) throws IOException {
-        return name;
+    private static String a ="12443";
+    
+    @RequestMapping(path = "/input")
+    public Object insertList() throws IOException {
+        return a;
     }
     
     @GetMapping
-    public Object send() throws IOException {
+    public Object send1() throws IOException {
+        System.out.println(a);
         
         // 管道流
         PipedInputStream pipedInputStream = new PipedInputStream();
@@ -89,5 +92,7 @@ public class TestController {
     
         return null;
     }
+    
+    
     
 }
